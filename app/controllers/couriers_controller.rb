@@ -11,6 +11,7 @@ class CouriersController < ApplicationController
   def create
     @courier = Courier.new(courier_params)    
     if @courier.save
+      log_in @courier
       flash[:success] = "Welcome to the Delivery App!"
        redirect_to @courier
        
